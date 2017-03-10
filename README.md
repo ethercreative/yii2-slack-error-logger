@@ -10,9 +10,11 @@ You can install the package using the Composer package manager. You can install 
 composer require ethercreative/yii2-slack-error-logger
 ```
 
-## Basic Useage
+## Basic Usage
 
 Add the class to your configuration file.
+
+You will need to [create an incoming webhook](https://my.slack.com/services/new/incoming-webhook)
 
 ```php
 	// ...
