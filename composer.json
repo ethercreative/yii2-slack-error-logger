@@ -1,0 +1,15 @@
+{
+	"name": "ethercreative/yii2-slack-error-logger",
+	"description": "Send errors (5xx) to a slack channel",
+	"keywords": ["yii2", "framework", "slack", "log", "logger"],
+	"homepage": "http://www.ethercreative.co.uk/",
+	"type": "project",
+	"license": "MIT",
+	"support": {
+		"issues": "https://github.com/ethercreative/yii2-slack-error-logger/issues?state=open",
+		"source": "https://github.com/ethercreative/yii2-slack-error-logger"
+	},
+	"require": {
+		"maknz/slack": "^1.7"
+	}
+}
