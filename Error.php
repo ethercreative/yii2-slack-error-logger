@@ -17,10 +17,10 @@ class Error extends \yii\log\Target
 
 	public function export()
 	{
-		if (!$webhook) throw new InvalidConfigException("Webhook is required.");
-		if (!$name) throw new InvalidConfigException("Name is required.");
-		if (!$username) throw new InvalidConfigException("Username is required.");
-		if (!$channel) throw new InvalidConfigException("Channel is required.");
+		if (!$this->webhook) throw new InvalidConfigException("Webhook is required.");
+		if (!$this->name) throw new InvalidConfigException("Name is required.");
+		if (!$this->username) throw new InvalidConfigException("Username is required.");
+		if (!$this->channel) throw new InvalidConfigException("Channel is required.");
 
 		$client = new Client($this->webhook, [
 			'username' => $this->username,
