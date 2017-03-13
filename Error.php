@@ -2,6 +2,7 @@
 
 namespace ethercreative\log;
 
+use Yii;
 use yii\base\InvalidConfigException;
 
 use Maknz\Slack\Client;
@@ -36,7 +37,10 @@ class Error extends \yii\log\Target
 
 			$message = $message[0];
 
-			if (is_string($message) || $message->statusCode < 500)
+			$statusCode = Yii::$app->response->statusCode;
+			$statusText  = Yii::$app->response->statusText;
+
+			if (is_string($message) || ((int) $statusCode < 500 && (int) $statusCode !== 0))
 				continue;
 
 			$string = $this->formatMessage($_message);
@@ -59,7 +63,7 @@ class Error extends \yii\log\Target
 					],
 					[
 						'title' => 'Error',
-						'value' => $message->statusCode . ' ' . $message->getMessage(),
+						'value' => $statusCode . ' ' . $statusText,
 						'short' => true,
 					],
 					[
